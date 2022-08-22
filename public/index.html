@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="content-language" content="en-us">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="./assets/logo.png">
+        <script src="main.js" defer></script>
+        <script src="particles.js"></script>
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <script src="https://bitwiseshiftleft.github.io/sjcl/sjcl.js"></script>
+        <title>Vata</title>
+        <script>
+            window.loggedIn = "{{loginTitle}}" != "Login" ? true : false;
+        </script>
+    </head>
+    <body onload="init();">
+        <canvas id="particles"></canvas>
+        <header id="header">
+            <div class="row">
+                <button class="rhombus"></button>
+                <div class="row2">  
+                    <button class="account"><i class="fa-solid fa-user"></i>&nbsp;<span id="user">{{loginTitle}}</span></button>
+                </div>
+            </div>
+        </header>
+        <div class="column">
+            <div class="container">
+                
+            </div>
+        </div>
+        <div id="loginPopup" class="popup" style="display: none;">
+            <div id="login-form" class="form1 show" style="display: none;">
+                <form id="myform" action="/api/login" method="post">
+                  <h3>Login</h3>
+            
+                  <label for="username">Username</label>
+                  <input type="text" placeholder="Email or Username" name="username">
+                  <span id="error6"> </span>
+            
+                  <label for="password">Password</label>
+                  <input type="password" placeholder="Password" name="password">
+            
+                  <button class="forgotPass">Forgot Password?</button>
+
+                  <button class="loginBtn">Log In</button>
+                  <div class="social">
+                    <button class="go"><i class="fab fa-google"></i>  Google</button>
+                    <button class="fb"><i class="fab fa-facebook"></i>  Facebook</button>
+                  </div>
+                <button class="tabBtn">No Account? Sign Up!</button>
+              </form>
+              </div>
+              <div id="signUp-form" class="form2" style="display: none;">
+                <form id="myform2" action="/api/signup" method="post">
+                  <h3>Sign Up</h3>
+            
+                  <label for="username">Username</label>
+                  <input type="text" placeholder="Username" name="username">
+                  <span id="error2"> </span>
+                  
+                  <label for="email">Email</label>
+                  <input type="email" placeholder="Email" name="email">
+                  <span id="error3"> </span>
+
+                  <label for="password">Password</label>
+                  <input type="password" placeholder="Password" name="password">
+                  <span id="error4"> </span>
+            
+                  <label for="confirmPassword">Confirm Password</label>
+                  <input type="password" placeholder="Confirm Password" name="confirmPassword">
+                  <span id="error"> </span>
+            
+                  <button class="signUpBtn">Sign Up</button>
+                  <span id="error5"> </span>
+            
+                  <button class="tabBtn">Have an Account? Login!</button>
+                </form>
+            </div>
+        </div>
+        <div id="accountOptions" class="popup2" style="display: none;">
+            <div id="options" class="dropdown">
+                <button class="wallet">My Wallet</button>
+                <button class="AccSettings">Account Settings</button>
+                <button class="LogOut">Logout</button>
+            </div>
+        </div>
+    </body>
+</html>
